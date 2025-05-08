@@ -1,6 +1,8 @@
 import pytest
-from datetime import datetime
-from main import Nest, Board, List, Task
+from taskrioshka.models.board import Board
+from taskrioshka.models.list import List
+from taskrioshka.models.task import Task
+from taskrioshka.models.nest import Nest
 
 #region Task
 

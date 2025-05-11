@@ -1,6 +1,6 @@
 import sys
 import os
-from taskrioshka.models.nest import Nest
+from kanbatryoshka.models.nest import Nest
 
 class NestCLI:
     def __init__(self):
@@ -24,7 +24,7 @@ class NestCLI:
         os.system('cls' if os.name == 'nt' else 'clear')
 
     def run(self):
-        print("=== Taskrioshka - CLI ===")
+        print("=== kanbatryoshka - CLI ===")
         print("Tapez 'help' pour voir les commandes disponibles.")
 
         while(True):

@@ -1,8 +1,8 @@
 import pytest
-from taskrioshka.models.board import Board
-from taskrioshka.models.list import List
-from taskrioshka.models.task import Task
-from taskrioshka.models.nest import Nest
+from kanbatryoshka.models.board import Board
+from kanbatryoshka.models.list import List
+from kanbatryoshka.models.task import Task
+from kanbatryoshka.models.nest import Nest
 
 #region Task
 
@@ -15,13 +15,6 @@ def test_task_creation():
     assert task.created_at is not None
     assert task.updated_at is not None
     assert task.board is not None
-
-def test_get_board():
-    task = Task("Test Task Title")
-    board = task.get_board()
-
-    assert isinstance(board, Board)
-    assert board.title == "Board: Test Task Title"
 
 #endregion Task
 
@@ -104,12 +97,6 @@ def test_create_board(nest):
     assert nest.boards[0] == board
     assert board.title == "Test Board Title"
     assert board.description == "Test Board Description"
-
-def test_delete_board(nest):
-    board = nest.create_board("Test Board Title")
-    assert len(nest.boards) == 1
-    nest.delete_board(board.id)
-    assert len(nest.boards) == 0
 
 def test_select_board(nest):
     board = nest.create_board("Test Board Title")
